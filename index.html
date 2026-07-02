@@ -35,17 +35,14 @@
         }
         h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
 
-        /* Fondo animado */
-        .bg-blobs {
-            position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
-        }
+        .bg-blobs { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
         .bg-blobs .blob {
-            position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.35;
-            animation: blobFloat 18s ease-in-out infinite alternate;
+            position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.3;
+            animation: blobFloat 20s ease-in-out infinite alternate;
         }
-        .blob-1 { width: 500px; height: 500px; background: #E8A838; top: -10%; left: -8%; animation-delay: 0s; }
-        .blob-2 { width: 400px; height: 400px; background: #D4542A; bottom: -12%; right: -5%; animation-delay: -6s; }
-        .blob-3 { width: 350px; height: 350px; background: #2A8FD4; top: 40%; right: 20%; animation-delay: -12s; opacity: 0.2; }
+        .blob-1 { width: 500px; height: 500px; background: #E8A838; top: -10%; left: -8%; }
+        .blob-2 { width: 400px; height: 400px; background: #D4542A; bottom: -12%; right: -5%; animation-delay: -7s; }
+        .blob-3 { width: 350px; height: 350px; background: #2A8FD4; top: 40%; right: 18%; animation-delay: -14s; opacity: 0.18; }
         @keyframes blobFloat {
             0% { transform: translate(0, 0) scale(1); }
             33% { transform: translate(40px, -30px) scale(1.08); }
@@ -53,32 +50,18 @@
             100% { transform: translate(30px, 20px) scale(1.03); }
         }
 
-        /* Contenedor principal */
-        .app-container {
-            position: relative; z-index: 1; max-width: 1100px;
-            margin: 0 auto; padding: 24px 20px 60px;
-        }
+        .app-container { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
 
-        /* Cards con glass */
         .glass-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: 16px; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
         }
 
-        /* Upload zone */
         .upload-zone {
-            border: 2px dashed rgba(232,168,56,0.3);
-            border-radius: 16px;
-            padding: 60px 30px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            background: rgba(232,168,56,0.03);
-            position: relative;
-            overflow: hidden;
+            border: 2px dashed rgba(232,168,56,0.3); border-radius: 16px;
+            padding: 60px 30px; text-align: center; cursor: pointer;
+            transition: all 0.3s ease; background: rgba(232,168,56,0.03);
+            position: relative; overflow: hidden;
         }
         .upload-zone::before {
             content: ''; position: absolute; inset: 0;
@@ -86,19 +69,17 @@
             opacity: 0; transition: opacity 0.4s;
         }
         .upload-zone:hover, .upload-zone.drag-over {
-            border-color: var(--accent);
-            background: rgba(232,168,56,0.06);
+            border-color: var(--accent); background: rgba(232,168,56,0.06);
         }
         .upload-zone:hover::before, .upload-zone.drag-over::before { opacity: 1; }
         .upload-zone .icon-wrap {
-            width: 80px; height: 80px; margin: 0 auto 20px;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            width: 80px; height: 80px; margin: 0 auto 20px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
             background: rgba(232,168,56,0.1); border: 1px solid rgba(232,168,56,0.2);
             transition: transform 0.3s;
         }
         .upload-zone:hover .icon-wrap { transform: scale(1.08); }
 
-        /* Botones */
         .btn-primary {
             display: inline-flex; align-items: center; gap: 8px;
             padding: 12px 28px; border-radius: 10px; border: none;
@@ -112,14 +93,13 @@
 
         .btn-secondary {
             display: inline-flex; align-items: center; gap: 8px;
-            padding: 10px 22px; border-radius: 10px;
-            border: 1px solid var(--border); background: transparent;
-            color: var(--fg); font-family: 'Space Grotesk', sans-serif;
-            font-weight: 500; font-size: 14px; cursor: pointer; transition: all 0.25s;
+            padding: 10px 22px; border-radius: 10px; border: 1px solid var(--border);
+            background: transparent; color: var(--fg);
+            font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 14px;
+            cursor: pointer; transition: all 0.25s;
         }
         .btn-secondary:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
 
-        /* Selects */
         .lang-select {
             width: 100%; padding: 12px 16px; border-radius: 10px;
             border: 1px solid var(--border); background: rgba(255,255,255,0.04);
@@ -132,28 +112,19 @@
         .lang-select:focus { outline: none; border-color: var(--accent); }
         .lang-select option { background: var(--card-solid); color: var(--fg); }
 
-        /* Progress */
-        .progress-bar-wrap {
-            width: 100%; height: 6px; border-radius: 3px;
-            background: rgba(255,255,255,0.06); overflow: hidden;
-        }
+        .progress-bar-wrap { width: 100%; height: 6px; border-radius: 3px; background: rgba(255,255,255,0.06); overflow: hidden; }
         .progress-bar-fill {
             height: 100%; border-radius: 3px; width: 0%;
             background: linear-gradient(90deg, #D4542A, var(--accent), #F0BD5A);
             transition: width 0.4s ease;
         }
 
-        /* Toast */
-        .toast-container {
-            position: fixed; top: 20px; right: 20px; z-index: 9999;
-            display: flex; flex-direction: column; gap: 10px;
-        }
+        .toast-container { position: fixed; top: 20px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 10px; }
         .toast {
-            padding: 14px 20px; border-radius: 10px; min-width: 280px;
-            font-size: 14px; display: flex; align-items: center; gap: 10px;
-            animation: toastIn 0.35s ease-out;
-            border: 1px solid var(--border);
-            backdrop-filter: blur(16px);
+            padding: 14px 20px; border-radius: 10px; min-width: 280px; max-width: 400px;
+            font-size: 14px; display: flex; align-items: flex-start; gap: 10px;
+            animation: toastIn 0.35s ease-out; border: 1px solid var(--border);
+            backdrop-filter: blur(16px); line-height: 1.4;
         }
         .toast.success { background: rgba(52,211,153,0.12); border-color: rgba(52,211,153,0.3); color: var(--success); }
         .toast.error { background: rgba(248,113,113,0.12); border-color: rgba(248,113,113,0.3); color: var(--error); }
@@ -162,64 +133,52 @@
         @keyframes toastIn { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }
         @keyframes toastOut { to { opacity: 0; transform: translateX(40px); } }
 
-        /* Preview */
-        .preview-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
-        }
+        .preview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
         @media (max-width: 768px) { .preview-grid { grid-template-columns: 1fr; } }
         .preview-card {
-            border-radius: 12px; overflow: hidden; border: 1px solid var(--border);
-            background: rgba(255,255,255,0.02);
+            border-radius: 12px; overflow: hidden; border: 1px solid var(--border); background: rgba(255,255,255,0.02);
         }
-        .preview-card img {
-            width: 100%; height: auto; display: block;
-            border-bottom: 1px solid var(--border);
-        }
+        .preview-card img { width: 100%; height: auto; display: block; border-bottom: 1px solid var(--border); }
         .preview-label {
             padding: 10px 14px; font-size: 12px; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 0.08em;
-            color: var(--muted);
+            text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted);
         }
         .preview-card.is-translated .preview-label { color: var(--accent); }
 
-        /* Secciones con transición */
         .step-section { display: none; animation: fadeUp 0.45s ease-out; }
         .step-section.active { display: block; }
         @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* File info */
         .file-info {
             display: flex; align-items: center; gap: 14px;
             padding: 14px 18px; border-radius: 10px;
             background: rgba(255,255,255,0.03); border: 1px solid var(--border);
         }
-        .file-icon {
-            width: 44px; height: 44px; border-radius: 10px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 18px;
-        }
+        .file-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
         .file-icon.pdf { background: rgba(248,113,113,0.12); color: #F87171; }
         .file-icon.img { background: rgba(96,165,250,0.12); color: #60A5FA; }
 
-        /* Spinner */
         .spinner { display: inline-block; width: 18px; height: 18px; border: 2px solid rgba(10,12,16,0.2); border-top-color: #0A0C10; border-radius: 50%; animation: spin 0.6s linear infinite; }
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        /* Scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
-
-        /* Page nav */
         .page-nav { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
         .page-thumb {
             width: 56px; height: 72px; border-radius: 6px; overflow: hidden;
-            border: 2px solid transparent; cursor: pointer; transition: all 0.2s;
-            opacity: 0.5;
+            border: 2px solid transparent; cursor: pointer; transition: all 0.2s; opacity: 0.5;
         }
         .page-thumb.active { border-color: var(--accent); opacity: 1; }
         .page-thumb:hover { opacity: 0.85; }
         .page-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+        .detected-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 500;
+            background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.25); color: var(--success);
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
 
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
@@ -227,7 +186,6 @@
     </style>
 </head>
 <body>
-    <!-- Fondo animado -->
     <div class="bg-blobs" aria-hidden="true">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
@@ -235,7 +193,6 @@
     </div>
 
     <div class="app-container">
-        <!-- Header -->
         <header style="margin-bottom: 36px;">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;">
                 <div style="width:38px;height:38px;border-radius:10px;background:var(--accent);display:flex;align-items:center;justify-content:center;">
@@ -243,10 +200,10 @@
                 </div>
                 <h1 style="font-size:26px;font-weight:700;letter-spacing:-0.02em;">DocuLingua</h1>
             </div>
-            <p style="color:var(--muted);font-size:14px;margin-left:50px;">Traduce PDFs e imágenes conservando la estructura original del documento</p>
+            <p style="color:var(--muted);font-size:14px;margin-left:50px;">Traduce PDFs e imagenes conservando la estructura original del documento</p>
         </header>
 
-        <!-- Paso 1: Subir archivo -->
+        <!-- Paso 1: Subir -->
         <section id="stepUpload" class="step-section active">
             <div class="upload-zone" id="uploadZone" role="button" tabindex="0" aria-label="Seleccionar archivo PDF o imagen">
                 <div class="icon-wrap">
@@ -261,7 +218,7 @@
                     <span style="padding:5px 12px;border-radius:6px;background:rgba(96,165,250,0.1);color:#60A5FA;font-size:12px;font-weight:500;">WEBP</span>
                     <span style="padding:5px 12px;border-radius:6px;background:rgba(96,165,250,0.1);color:#60A5FA;font-size:12px;font-weight:500;">BMP</span>
                 </div>
-                <p style="color:var(--muted);font-size:12px;margin-top:14px;opacity:0.6;position:relative;">Maximo 50 MB</p>
+                <p style="color:var(--muted);font-size:12px;margin-top:14px;opacity:0.6;position:relative;">Maximo 50 MB por archivo</p>
                 <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png,.webp,.bmp,.gif,.tiff,.tif" hidden>
             </div>
         </section>
@@ -270,8 +227,7 @@
         <section id="stepConfig" class="step-section">
             <div class="glass-card" style="padding:28px;">
                 <div class="file-info" id="fileInfo" style="margin-bottom:24px;"></div>
-
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:12px;">
                     <div>
                         <label style="display:block;font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Idioma origen</label>
                         <select id="sourceLang" class="lang-select"></select>
@@ -281,7 +237,11 @@
                         <select id="targetLang" class="lang-select"></select>
                     </div>
                 </div>
-
+                <p style="color:var(--muted);font-size:12px;margin-bottom:20px;opacity:0.7;">
+                    <i class="fas fa-info-circle" style="margin-right:4px;"></i>
+                    Si seleccionas "Detectar automaticamente", el sistema identificara el idioma antes de traducir. Para mejores resultados, selecciona el idioma manualmente.
+                </p>
+                <div id="detectedLangInfo" style="margin-bottom:20px;display:none;"></div>
                 <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
                     <button class="btn-primary" id="btnTranslate" onclick="startTranslation()">
                         <i class="fas fa-language"></i> Traducir documento
@@ -306,7 +266,7 @@
                 </div>
                 <p style="color:var(--muted);font-size:13px;" id="progressPercent">0%</p>
                 <div style="margin-top:20px;">
-                    <button class="btn-secondary" id="btnCancel" onclick="cancelProcessing()">
+                    <button class="btn-secondary" onclick="cancelProcessing()">
                         <i class="fas fa-xmark"></i> Cancelar
                     </button>
                 </div>
@@ -316,41 +276,40 @@
         <!-- Paso 4: Resultados -->
         <section id="stepResults" class="step-section">
             <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
-                <h2 style="font-size:22px;font-weight:700;">Traduccion completada</h2>
+                <div>
+                    <h2 style="font-size:22px;font-weight:700;">Traduccion completada</h2>
+                    <p id="resultLangInfo" style="color:var(--muted);font-size:13px;margin-top:4px;"></p>
+                </div>
                 <div style="display:flex;gap:10px;flex-wrap:wrap;">
                     <button class="btn-primary" id="btnDownloadPDF" onclick="downloadAsPDF()">
                         <i class="fas fa-file-pdf"></i> Descargar PDF
                     </button>
                     <button class="btn-secondary" id="btnDownloadImg" onclick="downloadAsImages()" style="display:none;">
-                        <i class="fas fa-images"></i> Descargar imagenes
+                        <i class="fas fa-images"></i> Descargar imagen
                     </button>
                     <button class="btn-secondary" onclick="goToStep('stepUpload')">
                         <i class="fas fa-plus"></i> Nuevo archivo
                     </button>
                 </div>
             </div>
-
-            <!-- Navegacion de paginas -->
             <div id="pageNav" class="page-nav" style="margin-bottom:20px;display:none;"></div>
-
-            <!-- Vista previa -->
             <div class="preview-grid" id="previewGrid"></div>
         </section>
     </div>
 
-    <!-- Toast container -->
     <div class="toast-container" id="toastContainer" aria-live="polite"></div>
 
     <script>
-        // ============================================================
+        // ================================================================
         // CONFIGURACION
-        // ============================================================
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+        // ================================================================
+        pdfjsLib.GlobalWorkerOptions.workerSrc =
+            'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
-        const MAX_PDF_SIZE = 50 * 1024 * 1024;
-        const MAX_IMAGE_SIZE = 20 * 1024 * 1024;
-        const RENDER_SCALE = 2; // Calidad de renderizado
-        const MAX_PREVIEW_PAGES = 12;
+        const RENDER_SCALE = 2;
+        const MAX_PREVIEW = 12;
+        const SEPARATOR = ' \u27E6\u27E7 '; // ⟦⟧ — separador raro que no aparece en texto normal
+        const RTL_LANGS = ['ar', 'he', 'fa', 'ur'];
 
         // Idiomas disponibles
         const languages = [
@@ -361,7 +320,7 @@
             { code: 'de', name: 'Aleman' },
             { code: 'pt', name: 'Portugues' },
             { code: 'it', name: 'Italiano' },
-            { code: 'zh-CN', name: 'Chino (Simplificado)' },
+            { code: 'zh', name: 'Chino (Simplificado)' },
             { code: 'ja', name: 'Japones' },
             { code: 'ko', name: 'Coreano' },
             { code: 'ru', name: 'Ruso' },
@@ -375,167 +334,242 @@
             { code: 'vi', name: 'Vietnamita' },
             { code: 'id', name: 'Indonesio' },
             { code: 'ro', name: 'Rumano' },
+            { code: 'uk', name: 'Ucraniano' },
         ];
 
-        // Mapeo de codigo MyMemory a codigo Tesseract
+        // Codigo interno → codigo Tesseract
         const tessLangMap = {
-            'autodetect': 'eng', 'en': 'eng', 'es': 'spa', 'fr': 'fra', 'de': 'deu',
-            'pt': 'por', 'it': 'ita', 'zh-CN': 'chi_sim', 'ja': 'jpn', 'ko': 'kor',
-            'ru': 'rus', 'ar': 'ara', 'hi': 'hin', 'tr': 'tur', 'pl': 'pol',
-            'nl': 'nld', 'sv': 'swe', 'th': 'tha', 'vi': 'vie', 'id': 'ind', 'ro': 'ron'
+            en:'eng', es:'spa', fr:'fra', de:'deu', pt:'por', it:'ita',
+            zh:'chi_sim', ja:'jpn', ko:'kor', ru:'rus', ar:'ara', hi:'hin',
+            tr:'tur', pl:'pol', nl:'nld', sv:'swe', th:'tha', vi:'vie',
+            id:'ind', ro:'ron', uk:'ukr'
         };
 
-        const rtlLangs = ['ar', 'he', 'fa', 'ur'];
+        // Todos los codigos ya son validos para MyMemory (zh, no zh-CN)
+        function toMyMem(code) { return code; }
 
-        // ============================================================
-        // ESTADO GLOBAL
-        // ============================================================
+        function getLangName(code) {
+            const l = languages.find(x => x.code === code);
+            return l ? l.name : code;
+        }
+
+        // ================================================================
+        // ESTADO
+        // ================================================================
         const state = {
             file: null,
-            fileType: null, // 'pdf' o 'image'
+            fileType: null,
             sourceLang: 'autodetect',
             targetLang: 'es',
             isProcessing: false,
             cancelRequested: false,
             originalPages: [],
             translatedPages: [],
-            currentPage: 0
+            detectedLang: null,
+            apiCallCount: 0
         };
 
-        // ============================================================
-        // INICIALIZACION
-        // ============================================================
+        // ================================================================
+        // INIT
+        // ================================================================
         function init() {
             populateLangSelects();
             setupUploadZone();
         }
 
         function populateLangSelects() {
-            const srcSelect = document.getElementById('sourceLang');
-            const tgtSelect = document.getElementById('targetLang');
-
+            const src = document.getElementById('sourceLang');
+            const tgt = document.getElementById('targetLang');
             languages.forEach(l => {
-                const opt1 = document.createElement('option');
-                opt1.value = l.code; opt1.textContent = l.name;
-                srcSelect.appendChild(opt1);
-
+                const o1 = document.createElement('option');
+                o1.value = l.code; o1.textContent = l.name; src.appendChild(o1);
                 if (l.code !== 'autodetect') {
-                    const opt2 = document.createElement('option');
-                    opt2.value = l.code; opt2.textContent = l.name;
-                    tgtSelect.appendChild(opt2);
+                    const o2 = document.createElement('option');
+                    o2.value = l.code; o2.textContent = l.name; tgt.appendChild(o2);
                 }
             });
-
-            srcSelect.value = 'autodetect';
-            tgtSelect.value = 'es';
-
-            srcSelect.addEventListener('change', () => { state.sourceLang = srcSelect.value; });
-            tgtSelect.addEventListener('change', () => { state.targetLang = tgtSelect.value; });
+            src.value = 'autodetect';
+            tgt.value = 'es';
         }
 
-        // ============================================================
-        // ZONA DE SUBIDA
-        // ============================================================
+        // ================================================================
+        // UPLOAD ZONE
+        // ================================================================
         function setupUploadZone() {
             const zone = document.getElementById('uploadZone');
             const input = document.getElementById('fileInput');
-
             zone.addEventListener('click', () => input.click());
             zone.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') input.click(); });
-
             zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('drag-over'); });
             zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
             zone.addEventListener('drop', e => {
                 e.preventDefault(); zone.classList.remove('drag-over');
                 if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
             });
-
             input.addEventListener('change', () => {
                 if (input.files.length) handleFile(input.files[0]);
                 input.value = '';
             });
         }
 
-        // ============================================================
-        // MANEJO DE ARCHIVOS
-        // ============================================================
+        // ================================================================
+        // MANEJO DE ARCHIVO
+        // ================================================================
         function handleFile(file) {
             const ext = file.name.split('.').pop().toLowerCase();
             const isPDF = ext === 'pdf';
-            const isImage = ['jpg','jpeg','png','webp','bmp','gif','tiff','tif'].includes(ext);
-
-            if (!isPDF && !isImage) {
-                showToast('Formato no soportado. Usa PDF o imagenes.', 'error');
-                return;
-            }
-
-            const maxSize = isPDF ? MAX_PDF_SIZE : MAX_IMAGE_SIZE;
-            if (file.size > maxSize) {
-                showToast(`Archivo demasiado grande. Maximo ${isPDF ? '50' : '20'} MB.`, 'error');
-                return;
-            }
+            const isImg = ['jpg','jpeg','png','webp','bmp','gif','tiff','tif'].includes(ext);
+            if (!isPDF && !isImg) { showToast('Formato no soportado. Usa PDF o imagenes.', 'error'); return; }
+            const maxMB = isPDF ? 50 : 20;
+            if (file.size > maxMB * 1024 * 1024) { showToast(`Archivo demasiado grande. Maximo ${maxMB} MB.`, 'error'); return; }
 
             state.file = file;
             state.fileType = isPDF ? 'pdf' : 'image';
             state.originalPages = [];
             state.translatedPages = [];
-            state.currentPage = 0;
+            state.detectedLang = null;
+            state.apiCallCount = 0;
 
-            // Mostrar info del archivo
-            const fileInfo = document.getElementById('fileInfo');
-            const sizeStr = file.size < 1024*1024
-                ? (file.size / 1024).toFixed(1) + ' KB'
-                : (file.size / (1024*1024)).toFixed(1) + ' MB';
-
-            fileInfo.innerHTML = `
+            const sizeStr = file.size < 1048576 ? (file.size / 1024).toFixed(1) + ' KB' : (file.size / 1048576).toFixed(1) + ' MB';
+            document.getElementById('fileInfo').innerHTML = `
                 <div class="file-icon ${isPDF ? 'pdf' : 'img'}">
                     <i class="fas ${isPDF ? 'fa-file-pdf' : 'fa-image'}"></i>
                 </div>
                 <div style="flex:1;min-width:0;">
                     <p style="font-weight:600;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${file.name}</p>
-                    <p style="color:var(--muted);font-size:12px;">${sizeStr} &middot; ${ext.toUpperCase()}</p>
+                    <p style="color:var(--muted);font-size:12px;">${sizeStr} · ${ext.toUpperCase()}</p>
                 </div>
-                <button onclick="goToStep('stepUpload')" style="background:none;border:none;color:var(--muted);cursor:pointer;padding:8px;" aria-label="Eliminar archivo">
+                <button onclick="goToStep('stepUpload')" style="background:none;border:none;color:var(--muted);cursor:pointer;padding:8px;" aria-label="Eliminar">
                     <i class="fas fa-xmark"></i>
-                </button>
-            `;
-
+                </button>`;
+            document.getElementById('detectedLangInfo').style.display = 'none';
             goToStep('stepConfig');
         }
 
-        // ============================================================
-        // NAVEGACION DE PASOS
-        // ============================================================
-        function goToStep(stepId) {
+        // ================================================================
+        // NAVEGACION
+        // ================================================================
+        function goToStep(id) {
             document.querySelectorAll('.step-section').forEach(s => s.classList.remove('active'));
-            document.getElementById(stepId).classList.add('active');
+            document.getElementById(id).classList.add('active');
         }
 
-        // ============================================================
+        // ================================================================
+        // DETECCION DE IDIOMA
+        // ================================================================
+
+        // Deteccion rapida por script (sin API)
+        function quickScriptDetect(text) {
+            if (!text || text.length < 3) return null;
+            const len = text.length;
+            const cjk = (text.match(/[\u4e00-\u9fff\u3400-\u4dbf]/g) || []).length;
+            if (cjk > len * 0.08) return 'zh';
+            if ((text.match(/[\u3040-\u309f]/g) || []).length > len * 0.03) return 'ja';
+            if ((text.match(/[\u30a0-\u30ff]/g) || []).length > len * 0.03) return 'ja';
+            if ((text.match(/[\uac00-\ud7af\u1100-\u11ff]/g) || []).length > len * 0.05) return 'ko';
+            if ((text.match(/[\u0400-\u04ff]/g) || []).length > len * 0.08) return 'ru';
+            if ((text.match(/[\u0600-\u06ff\u0750-\u077f]/g) || []).length > len * 0.08) return 'ar';
+            if ((text.match(/[\u0900-\u097f]/g) || []).length > len * 0.08) return 'hi';
+            if ((text.match(/[\u0e00-\u0e7f]/g) || []).length > len * 0.08) return 'th';
+            if ((text.match(/[\u0500-\u052f]/g) || []).length > len * 0.05) return 'uk';
+            return null; // Latin — requiere deteccion por API
+        }
+
+        // Deteccion por API: probar idiomas latinos comunes
+        async function detectByAPI(sampleText, targetLang) {
+            const latinLangs = ['en', 'es', 'fr', 'de', 'pt', 'it', 'nl', 'pl', 'ro', 'sv', 'tr', 'id', 'vi'];
+            const candidates = latinLangs.filter(l => l !== targetLang);
+            console.log('[Detect] Probando idiomas latinos:', candidates);
+
+            for (const lang of candidates) {
+                if (state.cancelRequested) return null;
+                try {
+                    const translated = await callMyMemory(sampleText, lang, targetLang);
+                    const origNorm = sampleText.toLowerCase().trim();
+                    const transNorm = translated.toLowerCase().trim();
+                    // Si la traduccion es diferente al original, este es probablemente el idioma correcto
+                    if (transNorm !== origNorm && transNorm.length > 0) {
+                        console.log(`[Detect] "${sampleText.substring(0,40)}" → "${translated.substring(0,40)}" (idioma: ${lang})`);
+                        return lang;
+                    }
+                } catch (e) {
+                    // Continuar con el siguiente
+                }
+                await sleep(300);
+            }
+            return null;
+        }
+
+        // Deteccion completa
+        async function detectSourceLang(textLines, targetLang) {
+            // Tomar muestra: primeras lineas con texto suficiente
+            const sample = textLines.filter(t => t.trim().length > 2).slice(0, 5).join(' ');
+            if (sample.length < 5) return 'en';
+
+            console.log('[Detect] Muestra para deteccion:', sample.substring(0, 100));
+
+            // 1. Deteccion por script (instantanea)
+            const scriptLang = quickScriptDetect(sample);
+            if (scriptLang) {
+                console.log('[Detect] Script detectado:', scriptLang);
+                return scriptLang;
+            }
+
+            // 2. Deteccion por API para scripts latinos
+            const apiLang = await detectByAPI(sample, targetLang);
+            if (apiLang) {
+                console.log('[Detect] API detecto:', apiLang);
+                return apiLang;
+            }
+
+            console.log('[Detect] No se pudo detectar, usando "en" como default');
+            return 'en';
+        }
+
+        // ================================================================
         // TRADUCCION PRINCIPAL
-        // ============================================================
+        // ================================================================
         async function startTranslation() {
             state.sourceLang = document.getElementById('sourceLang').value;
             state.targetLang = document.getElementById('targetLang').value;
 
             if (state.sourceLang === state.targetLang) {
-                showToast('El idioma origen y destino deben ser diferentes.', 'error');
-                return;
+                showToast('El idioma origen y destino deben ser diferentes.', 'error'); return;
             }
 
             state.isProcessing = true;
             state.cancelRequested = false;
             state.originalPages = [];
             state.translatedPages = [];
-            state.currentPage = 0;
+            state.detectedLang = null;
+            state.apiCallCount = 0;
 
             goToStep('stepProcessing');
 
             try {
+                let effectiveSource = state.sourceLang;
+
+                // Extraer muestra de texto para deteccion si es autodetect
+                if (effectiveSource === 'autodetect') {
+                    updateProgress(3, 'Extrayendo muestra de texto para detectar idioma...');
+                    const sampleLines = await extractTextSample();
+
+                    if (sampleLines.length === 0) {
+                        showToast('No se pudo extraer texto del documento. Verifica que contenga texto legible.', 'error');
+                        goToStep('stepConfig'); return;
+                    }
+
+                    updateProgress(8, 'Detectando idioma del documento...');
+                    effectiveSource = await detectSourceLang(sampleLines, state.targetLang);
+                    state.detectedLang = effectiveSource;
+                    console.log('[App] Idioma efectivo para traduccion:', effectiveSource);
+                }
+
+                // Procesar documento
                 if (state.fileType === 'pdf') {
-                    await processPDF();
+                    await processPDF(effectiveSource);
                 } else {
-                    await processImage();
+                    await processImage(effectiveSource);
                 }
 
                 if (!state.cancelRequested) {
@@ -544,7 +578,7 @@
                 }
             } catch (err) {
                 if (!state.cancelRequested) {
-                    console.error(err);
+                    console.error('[App] Error:', err);
                     showToast('Error: ' + err.message, 'error');
                     goToStep('stepConfig');
                 }
@@ -559,208 +593,174 @@
             goToStep('stepConfig');
         }
 
-        // ============================================================
-        // PROCESAMIENTO DE PDF
-        // ============================================================
-        async function processPDF() {
-            updateProgress(0, 'Cargando PDF...');
-            const arrayBuffer = await state.file.arrayBuffer();
-            const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
-            const totalPages = pdf.numPages;
+        // Extraer muestra de texto (primeras paginas) para deteccion
+        async function extractTextSample() {
+            const lines = [];
+            if (state.fileType === 'pdf') {
+                const ab = await state.file.arrayBuffer();
+                const pdf = await pdfjsLib.getDocument({ data: ab }).promise;
+                const maxPages = Math.min(pdf.numPages, 3);
+                for (let i = 1; i <= maxPages; i++) {
+                    const page = await pdf.getPage(i);
+                    const tc = await page.getTextContent();
+                    const items = tc.items.filter(it => it.str.trim().length > 0);
+                    if (items.length > 0) {
+                        // Agrupar en lineas
+                        const pageLines = groupTextIntoLines(items);
+                        pageLines.forEach(l => lines.push(l.text));
+                        if (lines.length >= 10) break;
+                    }
+                }
+            } else {
+                // Imagen: OCR rapido con ingles
+                const img = await loadImage(state.file);
+                const canvas = document.createElement('canvas');
+                canvas.width = img.naturalWidth;
+                canvas.height = img.naturalHeight;
+                canvas.getContext('2d').drawImage(img, 0, 0);
 
-            if (totalPages > 30) {
-                showToast(`El PDF tiene ${totalPages} paginas. El proceso puede tardar varios minutos.`, 'info');
+                // Para deteccion, primero probar script en texto del OCR ingles
+                // Si no funciona, probar otros scripts
+                let worker;
+                try {
+                    worker = await Tesseract.createWorker('eng', 1, { logger: () => {} });
+                    const result = await worker.recognize(canvas);
+                    const ocrLines = (result.data.lines || []).map(l => l.text.trim()).filter(t => t.length > 1);
+                    lines.push(...ocrLines);
+
+                    // Si el texto del OCR ingles tiene caracteres no-latinos, ya los detectamos con quickScriptDetect
+                } finally {
+                    if (worker) await worker.terminate();
+                }
+            }
+            return lines;
+        }
+
+        // ================================================================
+        // PROCESAR PDF
+        // ================================================================
+        async function processPDF(sourceLang) {
+            updateProgress(10, 'Cargando PDF...');
+            const ab = await state.file.arrayBuffer();
+            const pdf = await pdfjsLib.getDocument({ data: ab }).promise;
+            const total = pdf.numPages;
+
+            if (total > 30) {
+                showToast(`PDF con ${total} paginas. Puede tardar varios minutos.`, 'info');
             }
 
-            for (let i = 1; i <= totalPages; i++) {
+            for (let i = 1; i <= total; i++) {
                 if (state.cancelRequested) return;
+                const baseProg = 10 + ((i - 1) / total) * 85;
 
-                updateProgress(
-                    ((i - 1) / totalPages) * 100,
-                    `Procesando pagina ${i} de ${totalPages}...`
-                );
-
+                updateProgress(baseProg, `Pagina ${i} de ${total}: renderizando...`);
                 const page = await pdf.getPage(i);
-                const viewport = page.getViewport({ scale: RENDER_SCALE });
-
-                // Renderizar pagina a canvas
+                const vp = page.getViewport({ scale: RENDER_SCALE });
                 const canvas = document.createElement('canvas');
-                canvas.width = viewport.width;
-                canvas.height = viewport.height;
+                canvas.width = vp.width; canvas.height = vp.height;
                 const ctx = canvas.getContext('2d');
-                await page.render({ canvasContext: ctx, viewport }).promise;
+                await page.render({ canvasContext: ctx, viewport: vp }).promise;
 
                 // Guardar original
                 state.originalPages.push(canvas.toDataURL('image/png'));
 
-                // Extraer texto con posiciones
                 const textContent = await page.getTextContent();
                 const textItems = textContent.items.filter(it => it.str.trim().length > 0);
 
-                const pageHeightPdf = page.getViewport({ scale: 1 }).height;
-
                 if (textItems.length === 0) {
-                    // PDF escaneado: usar OCR
-                    updateProgress(
-                        ((i - 0.5) / totalPages) * 100,
-                        `Pagina ${i}: Texto no encontrado, usando OCR...`
-                    );
-                    const ocrData = await ocrCanvas(canvas, state.sourceLang);
-                    const ocrLines = ocrData.lines || [];
-                    const translatedLines = await translateTextLines(
-                        ocrLines.map(l => l.text),
-                        state.sourceLang, state.targetLang
-                    );
-                    drawOCRTranslated(ctx, ocrLines, translatedLines, canvas.width, canvas.height);
+                    // Pagina escaneada: OCR
+                    updateProgress(baseProg + 5, `Pagina ${i}: escaneada, usando OCR...`);
+                    await processScannedCanvas(canvas, sourceLang);
                 } else {
-                    // Agrupar texto en lineas
+                    // Texto extraible
                     const lines = groupTextIntoLines(textItems);
-                    updateProgress(
-                        ((i - 0.3) / totalPages) * 100,
-                        `Pagina ${i}: Traduciendo ${lines.length} lineas...`
+                    updateProgress(baseProg + 5, `Pagina ${i}: traduciendo ${lines.length} lineas...`);
+
+                    const translated = await translateTextLines(
+                        lines.map(l => l.text), sourceLang, state.targetLang
                     );
 
-                    // Traducir lineas
-                    const translatedTexts = await translateTextLines(
-                        lines.map(l => l.text),
-                        state.sourceLang, state.targetLang
-                    );
-
-                    // Dibujar traduccion sobre el canvas
-                    drawPDFTranslated(ctx, lines, translatedTexts, pageHeightPdf);
+                    const pdfH = page.getViewport({ scale: 1 }).height;
+                    drawPDFTranslated(ctx, lines, translated, pdfH);
                 }
 
                 state.translatedPages.push(canvas.toDataURL('image/png'));
-                updateProgress((i / totalPages) * 100, `Pagina ${i} completada`);
+                updateProgress(10 + (i / total) * 85, `Pagina ${i} completada`);
             }
+            updateProgress(98, 'Finalizando...');
         }
 
-        // Agrupar items de texto en lineas logicas
-        function groupTextIntoLines(items) {
-            if (!items.length) return [];
-
-            const sorted = [...items].sort((a, b) => {
-                const yA = a.transform[5], yB = b.transform[5];
-                const fsA = Math.max(Math.abs(a.transform[0]), Math.abs(a.transform[3]), 1);
-                const fsB = Math.max(Math.abs(b.transform[0]), Math.abs(b.transform[3]), 1);
-                const tolerance = Math.max(fsA, fsB) * 0.5;
-                if (Math.abs(yA - yB) < tolerance) return a.transform[4] - b.transform[4];
-                return yB - yA; // Arriba primero
-            });
-
-            const lines = [];
-            let currentLine = null;
-
-            for (const item of sorted) {
-                const x = item.transform[4];
-                const y = item.transform[5];
-                const fs = Math.max(Math.abs(item.transform[0]), Math.abs(item.transform[3]), 8);
-                const w = item.width || fs * item.str.length * 0.5;
-
-                if (!currentLine || Math.abs(y - currentLine.y) > currentLine.fontSize * 0.5) {
-                    if (currentLine) lines.push(currentLine);
-                    currentLine = { text: item.str, x, y, fontSize: fs, maxX: x + w, items: [item] };
-                } else {
-                    // Agregar espacio si hay separacion horizontal
-                    const gap = x - currentLine.maxX;
-                    if (gap > currentLine.fontSize * 0.3) currentLine.text += ' ';
-                    currentLine.text += item.str;
-                    currentLine.maxX = Math.max(currentLine.maxX, x + w);
-                    currentLine.fontSize = Math.max(currentLine.fontSize, fs);
-                    currentLine.items.push(item);
-                }
-            }
-            if (currentLine) lines.push(currentLine);
-            return lines;
-        }
-
-        // Dibujar texto traducido sobre canvas (PDF)
-        function drawPDFTranslated(ctx, lines, translatedTexts, pageHeightPdf) {
-            const isRTL = rtlLangs.includes(state.targetLang);
-
-            for (let i = 0; i < lines.length; i++) {
-                const line = lines[i];
-                const translated = translatedTexts[i] || line.text;
-                const s = RENDER_SCALE;
-                const canvasX = line.x * s;
-                const canvasY = (pageHeightPdf - line.y) * s;
-                const fontSize = line.fontSize * s;
-                const pad = 3;
-
-                // Configurar fuente
-                ctx.font = `${fontSize}px "DM Sans", Arial, Helvetica, sans-serif`;
-                let textWidth = ctx.measureText(translated).width;
-
-                // Ajustar tamano si el texto es mas largo
-                const maxW = (line.maxX - line.x) * s + 30;
-                let actualFS = fontSize;
-                if (textWidth > maxW && maxW > 20) {
-                    actualFS = Math.max(fontSize * 0.45, fontSize * (maxW / textWidth));
-                    ctx.font = `${actualFS}px "DM Sans", Arial, Helvetica, sans-serif`;
-                    textWidth = ctx.measureText(translated).width;
-                }
-
-                // Muestrear color de fondo
-                const bgColor = sampleBgColor(ctx, canvasX, canvasY - actualFS * 0.85, Math.max(textWidth, (line.maxX - line.x) * s), actualFS * 1.2);
-
-                // Dibujar rectangulo de fondo para cubrir texto original
-                ctx.fillStyle = bgColor;
-                const rectX = canvasX - pad;
-                const rectY = canvasY - actualFS * 0.88 - pad;
-                const rectW = Math.max(textWidth, (line.maxX - line.x) * s) + pad * 2;
-                const rectH = actualFS * 1.2 + pad * 2;
-                ctx.fillRect(rectX, rectY, rectW, rectH);
-
-                // Dibujar texto traducido
-                ctx.fillStyle = '#000000';
-                ctx.textBaseline = 'alphabetic';
-
-                if (isRTL) {
-                    ctx.direction = 'rtl';
-                    ctx.textAlign = 'right';
-                    ctx.fillText(translated, canvasX + rectW - pad * 2, canvasY);
-                    ctx.direction = 'ltr';
-                    ctx.textAlign = 'left';
-                } else {
-                    ctx.fillText(translated, canvasX, canvasY);
-                }
-            }
-        }
-
-        // Muestrear color de fondo de un area
-        function sampleBgColor(ctx, x, y, w, h) {
-            const cx = Math.min(Math.max(Math.floor(x + w / 2), 0), ctx.canvas.width - 1);
-            const cy = Math.min(Math.max(Math.floor(y + h / 2), 0), ctx.canvas.height - 1);
+        async function processScannedCanvas(canvas, sourceLang) {
+            const tessCode = tessLangMap[sourceLang] || 'eng';
+            let ocrResult;
+            let worker;
             try {
-                const pixel = ctx.getImageData(cx, cy, 1, 1).data;
-                // Si es muy oscuro, asumir fondo blanco (evitar texto oscuro sobre fondo oscuro)
-                const brightness = pixel[0] * 0.299 + pixel[1] * 0.587 + pixel[2] * 0.114;
-                if (brightness < 60) return '#FFFFFF';
-                return `rgb(${pixel[0]},${pixel[1]},${pixel[2]})`;
-            } catch {
-                return '#FFFFFF';
+                worker = await Tesseract.createWorker(tessCode, 1, { logger: () => {} });
+                ocrResult = await worker.recognize(canvas);
+            } finally {
+                if (worker) await worker.terminate();
             }
+
+            const ocrLines = (ocrResult.data.lines || []).filter(l => l.text.trim().length > 0);
+            if (ocrLines.length === 0) return; // Sin texto, dejar original
+
+            const translated = await translateTextLines(
+                ocrLines.map(l => l.text), sourceLang, state.targetLang
+            );
+
+            const ctx = canvas.getContext('2d');
+            drawOCRTranslated(ctx, ocrLines, translated, canvas.width, canvas.height);
         }
 
-        // ============================================================
-        // PROCESAMIENTO DE IMAGEN
-        // ============================================================
-        async function processImage() {
+        // ================================================================
+        // PROCESAR IMAGEN
+        // ================================================================
+        async function processImage(sourceLang) {
             updateProgress(5, 'Cargando imagen...');
-
             const img = await loadImage(state.file);
+
             const canvas = document.createElement('canvas');
             canvas.width = img.naturalWidth;
             canvas.height = img.naturalHeight;
-            const ctx = canvas.getContext('2d');
-            ctx.drawImage(img, 0, 0);
-
+            canvas.getContext('2d').drawImage(img, 0, 0);
             state.originalPages.push(canvas.toDataURL('image/png'));
 
-            updateProgress(15, 'Reconociendo texto con OCR...');
-            const tessLang = tessLangMap[state.sourceLang] || 'eng';
-            const ocrData = await ocrCanvas(canvas, state.sourceLang);
-            const ocrLines = ocrData.lines || [];
+            // Determinar el mejor lenguaje OCR
+            let ocrLangCode = tessLangMap[sourceLang] || 'eng';
+            let needsReOCR = false;
+
+            // Si el idioma fue autodetectado y es no-ingles, puede que necesitemos re-OCR
+            if (state.sourceLang === 'autodetect' && sourceLang !== 'en') {
+                const tessForDetected = tessLangMap[sourceLang];
+                if (tessForDetected && tessForDetected !== 'eng') {
+                    needsReOCR = true;
+                }
+            }
+
+            let ocrLines;
+
+            if (needsReOCR) {
+                // Re-OCR con el idioma correcto (el primer OCR fue con 'eng' para la deteccion)
+                updateProgress(15, `Reconociendo texto en ${getLangName(sourceLang)}...`);
+                let worker;
+                try {
+                    worker = await Tesseract.createWorker(ocrLangCode, 1, { logger: () => {} });
+                    const result = await worker.recognize(canvas);
+                    ocrLines = (result.data.lines || []).filter(l => l.text.trim().length > 0);
+                } finally {
+                    if (worker) await worker.terminate();
+                }
+            } else {
+                updateProgress(15, 'Reconociendo texto con OCR...');
+                let worker;
+                try {
+                    worker = await Tesseract.createWorker(ocrLangCode, 1, { logger: () => {} });
+                    const result = await worker.recognize(canvas);
+                    ocrLines = (result.data.lines || []).filter(l => l.text.trim().length > 0);
+                } finally {
+                    if (worker) await worker.terminate();
+                }
+            }
 
             if (ocrLines.length === 0) {
                 showToast('No se detecto texto en la imagen.', 'info');
@@ -768,16 +768,21 @@
                 return;
             }
 
-            updateProgress(40, `Traduciendo ${ocrLines.length} lineas de texto...`);
-            const translatedTexts = await translateTextLines(
-                ocrLines.map(l => l.text),
-                state.sourceLang, state.targetLang
+            updateProgress(40, `Traduciendo ${ocrLines.length} lineas...`);
+            const translated = await translateTextLines(
+                ocrLines.map(l => l.text), sourceLang, state.targetLang
             );
 
-            updateProgress(80, 'Generando imagen traducida...');
-            drawOCRTranslated(ctx, ocrLines, translatedTexts, canvas.width, canvas.height);
+            updateProgress(85, 'Generando imagen traducida...');
+            // Dibujar sobre una copia fresca de la imagen
+            const finalCanvas = document.createElement('canvas');
+            finalCanvas.width = img.naturalWidth;
+            finalCanvas.height = img.naturalHeight;
+            const fCtx = finalCanvas.getContext('2d');
+            fCtx.drawImage(img, 0, 0);
 
-            state.translatedPages.push(canvas.toDataURL('image/png'));
+            drawOCRTranslated(fCtx, ocrLines, translated, finalCanvas.width, finalCanvas.height);
+            state.translatedPages.push(finalCanvas.toDataURL('image/png'));
             updateProgress(100, 'Completado');
         }
 
@@ -790,55 +795,242 @@
             });
         }
 
-        // OCR sobre un canvas
-        async function ocrCanvas(canvas, sourceLang) {
-            const tessLang = tessLangMap[sourceLang] || 'eng';
-            let worker;
-            try {
-                worker = await Tesseract.createWorker(tessLang, 1, {
-                    logger: m => {
-                        if (m.status === 'recognizing text') {
-                            // No actualizamos progreso principal para no sobreescribir
+        // ================================================================
+        // AGRUPAR TEXTO EN LINEAS (PDF)
+        // ================================================================
+        function groupTextIntoLines(items) {
+            if (!items.length) return [];
+            const sorted = [...items].sort((a, b) => {
+                const yA = a.transform[5], yB = b.transform[5];
+                const fsA = Math.max(Math.abs(a.transform[0]), Math.abs(a.transform[3]), 1);
+                const fsB = Math.max(Math.abs(b.transform[0]), Math.abs(b.transform[3]), 1);
+                const tol = Math.max(fsA, fsB) * 0.5;
+                if (Math.abs(yA - yB) < tol) return a.transform[4] - b.transform[4];
+                return yB - yA;
+            });
+
+            const lines = [];
+            let cur = null;
+            for (const it of sorted) {
+                const x = it.transform[4], y = it.transform[5];
+                const fs = Math.max(Math.abs(it.transform[0]), Math.abs(it.transform[3]), 8);
+                const w = it.width || fs * it.str.length * 0.5;
+                if (!cur || Math.abs(y - cur.y) > cur.fontSize * 0.5) {
+                    if (cur) lines.push(cur);
+                    cur = { text: it.str, x, y, fontSize: fs, maxX: x + w };
+                } else {
+                    if (x - cur.maxX > cur.fontSize * 0.3) cur.text += ' ';
+                    cur.text += it.str;
+                    cur.maxX = Math.max(cur.maxX, x + w);
+                    cur.fontSize = Math.max(cur.fontSize, fs);
+                }
+            }
+            if (cur) lines.push(cur);
+            return lines;
+        }
+
+        // ================================================================
+        // TRADUCCION DE TEXTO (API MyMemory)
+        // ================================================================
+        async function translateTextLines(texts, from, to) {
+            // Filtrar lineas vacias
+            const nonEmpty = texts.map((t, i) => ({ text: t.trim(), idx: i })).filter(x => x.text.length > 0);
+            if (nonEmpty.length === 0) return texts;
+
+            // Agrupar en lotes
+            const batches = [];
+            let batch = [];
+            let batchLen = 0;
+            const MAX_LEN = 800;
+
+            for (const item of nonEmpty) {
+                const entry = item.text + SEPARATOR;
+                if (batchLen + entry.length > MAX_LEN && batch.length > 0) {
+                    batches.push(batch);
+                    batch = []; batchLen = 0;
+                }
+                batch.push(item);
+                batchLen += entry.length;
+            }
+            if (batch.length > 0) batches.push(batch);
+
+            console.log(`[Translate] ${nonEmpty.length} lineas en ${batches.length} lotes (de ${from} a ${to})`);
+
+            const results = new Array(texts.length).fill('');
+            let totalTranslated = 0;
+
+            for (let b = 0; b < batches.length; b++) {
+                if (state.cancelRequested) break;
+
+                const batchText = batches[b].map(x => x.text).join(SEPARATOR);
+                const translated = await translateBatch(batchText, from, to);
+                const parts = translated.split(SEPARATOR);
+
+                for (let j = 0; j < batches[b].length; j++) {
+                    const origIdx = batches[b][j].idx;
+                    results[origIdx] = (parts[j] !== undefined ? parts[j].trim() : batches[b][j].text) || batches[b][j].text;
+                    totalTranslated++;
+                }
+
+                // Pausa entre lotes para evitar rate limiting
+                if (b < batches.length - 1) await sleep(400);
+            }
+
+            console.log(`[Translate] ${totalTranslated} lineas traducidas (${state.apiCallCount} llamadas API)`);
+            return results;
+        }
+
+        async function translateBatch(text, from, to) {
+            const mmFrom = toMyMem(from);
+            const mmTo = toMyMem(to);
+            const langPair = `${mmFrom}|${mmTo}`;
+            const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${langPair}`;
+
+            for (let attempt = 0; attempt <= 2; attempt++) {
+                if (state.cancelRequested) return text;
+                try {
+                    state.apiCallCount++;
+                    const resp = await fetch(url);
+                    const data = await resp.json();
+
+                    if (data.responseStatus === 200 && data.responseData && data.responseData.translatedText) {
+                        let result = data.responseData.translatedText;
+                        // Verificar que realmente se tradujo (no es igual al original)
+                        if (result.trim().toLowerCase() === text.trim().toLowerCase() && attempt < 2) {
+                            console.warn(`[Translate] La API devolvio el texto original (intento ${attempt + 1})`);
+                            await sleep(800);
+                            continue;
                         }
+                        return result;
                     }
-                });
-                const result = await worker.recognize(canvas);
-                return result.data;
-            } finally {
-                if (worker) await worker.terminate();
+
+                    // Respuesta con error
+                    if (attempt < 2) {
+                        console.warn(`[Translate] API status ${data.responseStatus} (intento ${attempt + 1})`);
+                        await sleep(1000 * (attempt + 1));
+                        continue;
+                    }
+                    return text; // Ultimo intento fallido, devolver original
+                } catch (err) {
+                    console.warn(`[Translate] Error de red (intento ${attempt + 1}):`, err.message);
+                    if (attempt < 2) {
+                        await sleep(1000 * (attempt + 1));
+                        continue;
+                    }
+                    return text;
+                }
+            }
+            return text;
+        }
+
+        // Llamada directa a MyMemory (para deteccion de idioma)
+        async function callMyMemory(text, from, to) {
+            const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${from}|${to}`;
+            state.apiCallCount++;
+            const resp = await fetch(url);
+            const data = await resp.json();
+            if (data.responseStatus === 200 && data.responseData && data.responseData.translatedText) {
+                return data.responseData.translatedText;
+            }
+            throw new Error(`API error: ${data.responseStatus}`);
+        }
+
+        // ================================================================
+        // DIBUJAR TRADUCCION SOBRE CANVAS (PDF)
+        // ================================================================
+        function drawPDFTranslated(ctx, lines, translatedTexts, pageHeightPdf) {
+            const s = RENDER_SCALE;
+            const isRTL = RTL_LANGS.includes(state.targetLang);
+
+            // Pre-muestrear colores de fondo ANTES de dibujar nada
+            const bgColors = lines.map(line => {
+                const cx = line.x * s;
+                const cy = (pageHeightPdf - line.y) * s;
+                const fs = line.fontSize * s;
+                const w = Math.max((line.maxX - line.x) * s, 1);
+                return sampleBgColor(ctx, cx, cy - fs * 0.85, w, fs * 1.2);
+            });
+
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i];
+                const translated = translatedTexts[i] || line.text;
+                const cx = line.x * s;
+                const cy = (pageHeightPdf - line.y) * s;
+                const fs = line.fontSize * s;
+                const pad = 3;
+
+                ctx.font = `${fs}px "DM Sans", Arial, Helvetica, sans-serif`;
+                let tw = ctx.measureText(translated).width;
+                const maxW = (line.maxX - line.x) * s + 40;
+                let aFS = fs;
+
+                if (tw > maxW && maxW > 20) {
+                    aFS = Math.max(fs * 0.42, fs * (maxW / tw));
+                    ctx.font = `${aFS}px "DM Sans", Arial, Helvetica, sans-serif`;
+                    tw = ctx.measureText(translated).width;
+                }
+
+                // Rectangulo de fondo
+                const rx = cx - pad;
+                const ry = cy - aFS * 0.88 - pad;
+                const rw = Math.max(tw, (line.maxX - line.x) * s) + pad * 2;
+                const rh = aFS * 1.2 + pad * 2;
+                ctx.fillStyle = bgColors[i];
+                ctx.fillRect(rx, ry, rw, rh);
+
+                // Texto traducido
+                ctx.fillStyle = '#000000';
+                ctx.textBaseline = 'alphabetic';
+                if (isRTL) {
+                    ctx.direction = 'rtl';
+                    ctx.textAlign = 'right';
+                    ctx.fillText(translated, cx + rw - pad * 2, cy);
+                    ctx.direction = 'ltr';
+                    ctx.textAlign = 'left';
+                } else {
+                    ctx.fillText(translated, cx, cy);
+                }
             }
         }
 
-        // Dibujar traduccion OCR sobre canvas
-        function drawOCRTranslated(ctx, ocrLines, translatedTexts, canvasW, canvasH) {
-            const isRTL = rtlLangs.includes(state.targetLang);
+        // ================================================================
+        // DIBUJAR TRADUCCION SOBRE CANVAS (OCR)
+        // ================================================================
+        function drawOCRTranslated(ctx, ocrLines, translatedTexts, cW, cH) {
+            const isRTL = RTL_LANGS.includes(state.targetLang);
+
+            // Pre-muestrear colores
+            const bgColors = ocrLines.map(line => {
+                const b = line.bbox;
+                return sampleBgColor(ctx, b.x0, b.y0, Math.max(b.x1 - b.x0, 1), b.y1 - b.y0);
+            });
 
             for (let i = 0; i < ocrLines.length; i++) {
                 const line = ocrLines[i];
                 const translated = translatedTexts[i] || line.text;
-                const bbox = line.bbox;
-                const x0 = bbox.x0, y0 = bbox.y0, x1 = bbox.x1, y1 = bbox.y1;
-                const lineH = y1 - y0;
-                const fontSize = Math.max(lineH * 0.85, 8);
+                const b = line.bbox;
+                const lH = b.y1 - b.y0;
+                const fs = Math.max(lH * 0.85, 8);
                 const pad = 3;
 
-                ctx.font = `${fontSize}px "DM Sans", Arial, Helvetica, sans-serif`;
-                let textWidth = ctx.measureText(translated).width;
+                ctx.font = `${fs}px "DM Sans", Arial, Helvetica, sans-serif`;
+                let tw = ctx.measureText(translated).width;
+                const maxW = (b.x1 - b.x0) + 40;
+                let aFS = fs;
 
-                // Ajustar tamano
-                const maxW = (x1 - x0) + 40;
-                let actualFS = fontSize;
-                if (textWidth > maxW && maxW > 20) {
-                    actualFS = Math.max(fontSize * 0.4, fontSize * (maxW / textWidth));
-                    ctx.font = `${actualFS}px "DM Sans", Arial, Helvetica, sans-serif`;
-                    textWidth = ctx.measureText(translated).width;
+                if (tw > maxW && maxW > 20) {
+                    aFS = Math.max(fs * 0.4, fs * (maxW / tw));
+                    ctx.font = `${aFS}px "DM Sans", Arial, Helvetica, sans-serif`;
+                    tw = ctx.measureText(translated).width;
                 }
 
-                // Color de fondo
-                const bgColor = sampleBgColor(ctx, x0, y0, Math.max(x1 - x0, textWidth), lineH);
+                const rx = b.x0 - pad;
+                const ry = b.y0 - pad;
+                const rw = Math.max(tw, b.x1 - b.x0) + pad * 2;
+                const rh = lH + pad * 2;
 
-                ctx.fillStyle = bgColor;
-                ctx.fillRect(x0 - pad, y0 - pad, Math.max(textWidth, x1 - x0) + pad * 2, lineH + pad * 2);
+                ctx.fillStyle = bgColors[i];
+                ctx.fillRect(rx, ry, rw, rh);
 
                 ctx.fillStyle = '#000000';
                 ctx.textBaseline = 'top';
@@ -846,181 +1038,94 @@
                 if (isRTL) {
                     ctx.direction = 'rtl';
                     ctx.textAlign = 'right';
-                    ctx.fillText(translated, x0 + Math.max(textWidth, x1 - x0) + pad, y0 + (lineH - actualFS) / 2);
+                    ctx.fillText(translated, b.x0 + rw - pad, b.y0 + (lH - aFS * 0.85) / 2);
                     ctx.direction = 'ltr';
                     ctx.textAlign = 'left';
                 } else {
-                    ctx.fillText(translated, x0, y0 + (lineH - actualFS * 0.85) / 2);
+                    ctx.fillText(translated, b.x0, b.y0 + (lH - aFS * 0.85) / 2);
                 }
             }
         }
 
-        // ============================================================
-        // TRADUCCION DE TEXTO (API MyMemory)
-        // ============================================================
-        async function translateTextLines(texts, from, to) {
-            // Agrupar lineas en lotes para minimizar llamadas API
-            const batches = [];
-            let currentBatch = [];
-            let currentLen = 0;
-            const MAX = 850;
-            const SEP = '|||';
-
-            for (const text of texts) {
-                const entry = text + SEP;
-                if (currentLen + entry.length > MAX && currentBatch.length > 0) {
-                    batches.push(currentBatch);
-                    currentBatch = [];
-                    currentLen = 0;
-                }
-                currentBatch.push(text);
-                currentLen += entry.length;
-            }
-            if (currentBatch.length > 0) batches.push(currentBatch);
-
-            const allResults = [];
-            for (let b = 0; b < batches.length; b++) {
-                if (state.cancelRequested) break;
-
-                const batchText = batches[b].join(SEP);
-                const translated = await translateChunk(batchText, from, to);
-                const parts = translated.split(SEP);
-
-                for (let j = 0; j < batches[b].length; j++) {
-                    allResults.push(parts[j] !== undefined ? parts[j].trim() : batches[b][j]);
-                }
-
-                // Pausa para evitar rate limiting
-                if (b < batches.length - 1) {
-                    await sleep(350);
-                }
-            }
-
-            return allResults;
+        // Muestrear color de fondo de un area
+        function sampleBgColor(ctx, x, y, w, h) {
+            const cx = Math.min(Math.max(Math.floor(x + w / 2), 0), ctx.canvas.width - 1);
+            const cy = Math.min(Math.max(Math.floor(y + h / 2), 0), ctx.canvas.height - 1);
+            try {
+                const p = ctx.getImageData(cx, cy, 1, 1).data;
+                const brightness = p[0] * 0.299 + p[1] * 0.587 + p[2] * 0.114;
+                if (brightness < 60) return '#FFFFFF';
+                return `rgb(${p[0]},${p[1]},${p[2]})`;
+            } catch { return '#FFFFFF'; }
         }
 
-        async function translateChunk(text, from, to) {
-            const langPair = from === 'autodetect' ? `autodetect|${to}` : `${from}|${to}`;
-            const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${langPair}`;
-
-            const maxRetries = 2;
-            for (let attempt = 0; attempt <= maxRetries; attempt++) {
-                try {
-                    const resp = await fetch(url);
-                    const data = await resp.json();
-
-                    if (data.responseStatus === 200 && data.responseData?.translatedText) {
-                        let result = data.responseData.translatedText;
-                        // MyMemory a veces pone mayusculas la primera letra de todo el bloque
-                        return result;
-                    }
-                    // Si es "NO QUERY SPECIFIED" o similar, devolver original
-                    if (attempt === maxRetries) return text;
-                } catch (err) {
-                    if (attempt === maxRetries) {
-                        console.warn('Error de traduccion, usando texto original:', err);
-                        return text;
-                    }
-                    await sleep(1000 * (attempt + 1));
-                }
-            }
-            return text;
-        }
-
-        function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
-
-        // ============================================================
-        // PROGRESO
-        // ============================================================
-        function updateProgress(percent, text) {
-            const bar = document.getElementById('progressBar');
-            const pct = document.getElementById('progressPercent');
-            const txt = document.getElementById('processingText');
-            if (bar) bar.style.width = Math.min(100, Math.max(0, percent)) + '%';
-            if (pct) pct.textContent = Math.round(percent) + '%';
-            if (txt) txt.textContent = text;
-        }
-
-        // ============================================================
-        // MOSTRAR RESULTADOS
-        // ============================================================
+        // ================================================================
+        // RESULTADOS
+        // ================================================================
         function showResults() {
             goToStep('stepResults');
-
             const grid = document.getElementById('previewGrid');
-            const pageNav = document.getElementById('pageNav');
+            const nav = document.getElementById('pageNav');
             const btnImg = document.getElementById('btnDownloadImg');
+            const info = document.getElementById('resultLangInfo');
 
             grid.innerHTML = '';
-            pageNav.innerHTML = '';
+            nav.innerHTML = '';
 
             const total = state.translatedPages.length;
-            const showCount = Math.min(total, MAX_PREVIEW_PAGES);
+            const srcName = state.detectedLang ? getLangName(state.detectedLang) : getLangName(state.sourceLang);
+            const tgtName = getLangName(state.targetLang);
+            info.textContent = `${srcName} → ${tgtName} · ${total} pagina${total > 1 ? 's' : ''} · ${state.apiCallCount} llamadas API`;
 
-            // Mostrar boton de descarga de imagenes solo si es imagen individual
             btnImg.style.display = state.fileType === 'image' ? 'inline-flex' : 'none';
 
-            // Navegacion de paginas (solo si hay mas de 1)
             if (total > 1) {
-                pageNav.style.display = 'flex';
+                nav.style.display = 'flex';
                 for (let i = 0; i < total; i++) {
                     const thumb = document.createElement('div');
                     thumb.className = 'page-thumb' + (i === 0 ? ' active' : '');
                     thumb.innerHTML = `<img src="${state.translatedPages[i]}" alt="Pagina ${i+1}" loading="lazy">`;
                     thumb.title = `Pagina ${i + 1}`;
                     thumb.addEventListener('click', () => {
-                        document.querySelectorAll('.page-thumb').forEach(t => t.classList.remove('active'));
+                        nav.querySelectorAll('.page-thumb').forEach(t => t.classList.remove('active'));
                         thumb.classList.add('active');
-                        showPagePair(i);
+                        const pair = grid.querySelector(`[data-page="${i}"]`);
+                        if (pair) pair.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     });
-                    pageNav.appendChild(thumb);
+                    nav.appendChild(thumb);
                 }
             } else {
-                pageNav.style.display = 'none';
+                nav.style.display = 'none';
             }
 
-            // Mostrar pares original/traducido
+            const showCount = Math.min(total, MAX_PREVIEW);
             for (let i = 0; i < showCount; i++) {
-                addPagePair(grid, i);
+                const label = total > 1 ? ` — Pagina ${i + 1}` : '';
+                const wrapper = document.createElement('div');
+                wrapper.dataset.page = i;
+                wrapper.innerHTML = `
+                    <div class="preview-card">
+                        <img src="${state.originalPages[i]}" alt="Original${label}" loading="lazy">
+                        <div class="preview-label"><i class="fas fa-file" style="margin-right:6px;"></i>Original${label}</div>
+                    </div>
+                    <div class="preview-card is-translated">
+                        <img src="${state.translatedPages[i]}" alt="Traducido${label}" loading="lazy">
+                        <div class="preview-label"><i class="fas fa-language" style="margin-right:6px;"></i>Traducido${label}</div>
+                    </div>`;
+                grid.appendChild(wrapper);
             }
 
-            if (total > MAX_PREVIEW_PAGES) {
+            if (total > MAX_PREVIEW) {
                 const note = document.createElement('p');
                 note.style.cssText = 'grid-column:1/-1;text-align:center;color:var(--muted);font-size:13px;padding:12px;';
-                note.textContent = `Mostrando ${MAX_PREVIEW_PAGES} de ${total} paginas. Todas se incluyen en la descarga.`;
+                note.textContent = `Mostrando ${MAX_PREVIEW} de ${total} paginas. Todas se incluyen en la descarga.`;
                 grid.appendChild(note);
             }
         }
 
-        function addPagePair(container, index) {
-            const wrapper = document.createElement('div');
-            wrapper.className = 'preview-pair';
-            wrapper.dataset.page = index;
-
-            const label = state.translatedPages.length > 1 ? ` — Pagina ${index + 1}` : '';
-
-            wrapper.innerHTML = `
-                <div class="preview-card">
-                    <img src="${state.originalPages[index]}" alt="Original${label}" loading="lazy">
-                    <div class="preview-label"><i class="fas fa-file" style="margin-right:6px;"></i>Original${label}</div>
-                </div>
-                <div class="preview-card is-translated">
-                    <img src="${state.translatedPages[index]}" alt="Traducido${label}" loading="lazy">
-                    <div class="preview-label"><i class="fas fa-language" style="margin-right:6px;"></i>Traducido${label}</div>
-                </div>
-            `;
-            container.appendChild(wrapper);
-        }
-
-        function showPagePair(index) {
-            // Scroll a la vista previa de esa pagina
-            const pair = document.querySelector(`.preview-pair[data-page="${index}"]`);
-            if (pair) pair.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-
-        // ============================================================
+        // ================================================================
         // DESCARGA
-        // ============================================================
+        // ================================================================
         async function downloadAsPDF() {
             const btn = document.getElementById('btnDownloadPDF');
             btn.disabled = true;
@@ -1028,39 +1133,34 @@
 
             try {
                 const { jsPDF } = window.jspdf;
-
-                // Precargar todas las imagenes traducidas
-                const images = await Promise.all(state.translatedPages.map(src => {
-                    return new Promise((resolve, reject) => {
+                const images = await Promise.all(state.translatedPages.map(src =>
+                    new Promise((res, rej) => {
                         const img = new Image();
-                        img.onload = () => resolve(img);
-                        img.onerror = reject;
+                        img.onload = () => res(img);
+                        img.onerror = rej;
                         img.src = src;
-                    });
-                }));
+                    })
+                ));
 
                 const first = images[0];
                 const pdf = new jsPDF({
                     orientation: first.naturalWidth > first.naturalHeight ? 'landscape' : 'portrait',
-                    unit: 'px',
-                    format: [first.naturalWidth, first.naturalHeight],
-                    compress: true
+                    unit: 'px', format: [first.naturalWidth, first.naturalHeight], compress: true
                 });
-
                 pdf.addImage(state.translatedPages[0], 'PNG', 0, 0, first.naturalWidth, first.naturalHeight);
 
                 for (let i = 1; i < images.length; i++) {
-                    const img = images[i];
-                    pdf.addPage([img.naturalWidth, img.naturalHeight], img.naturalWidth > img.naturalHeight ? 'landscape' : 'portrait');
-                    pdf.addImage(state.translatedPages[i], 'PNG', 0, 0, img.naturalWidth, img.naturalHeight);
+                    const im = images[i];
+                    pdf.addPage([im.naturalWidth, im.naturalHeight], im.naturalWidth > im.naturalHeight ? 'landscape' : 'portrait');
+                    pdf.addImage(state.translatedPages[i], 'PNG', 0, 0, im.naturalWidth, im.naturalHeight);
                 }
 
-                const baseName = state.file.name.replace(/\.[^.]+$/, '');
-                pdf.save(`${baseName}_traducido.pdf`);
+                const base = state.file.name.replace(/\.[^.]+$/, '');
+                pdf.save(`${base}_traducido.pdf`);
                 showToast('PDF descargado correctamente.', 'success');
             } catch (err) {
                 console.error(err);
-                showToast('Error al generar el PDF.', 'error');
+                showToast('Error al generar el PDF: ' + err.message, 'error');
             } finally {
                 btn.disabled = false;
                 btn.innerHTML = '<i class="fas fa-file-pdf"></i> Descargar PDF';
@@ -1068,43 +1168,45 @@
         }
 
         function downloadAsImages() {
-            if (state.translatedPages.length === 0) return;
-
-            const baseName = state.file.name.replace(/\.[^.]+$/, '');
-
+            if (!state.translatedPages.length) return;
+            const base = state.file.name.replace(/\.[^.]+$/, '');
             state.translatedPages.forEach((dataUrl, i) => {
-                const link = document.createElement('a');
-                link.href = dataUrl;
-                const suffix = state.translatedPages.length > 1 ? `_pagina${i + 1}` : '';
-                link.download = `${baseName}_traducido${suffix}.png`;
-                link.click();
+                const a = document.createElement('a');
+                a.href = dataUrl;
+                a.download = `${base}_traducido${state.translatedPages.length > 1 ? `_pagina${i + 1}` : ''}.png`;
+                a.click();
             });
-
-            showToast('Imagen descargada correctamente.', 'success');
+            showToast('Imagen descargada.', 'success');
         }
 
-        // ============================================================
-        // TOASTS
-        // ============================================================
+        // ================================================================
+        // UTILIDADES
+        // ================================================================
+        function updateProgress(pct, text) {
+            const bar = document.getElementById('progressBar');
+            const pEl = document.getElementById('progressPercent');
+            const tEl = document.getElementById('processingText');
+            const v = Math.min(100, Math.max(0, pct));
+            if (bar) bar.style.width = v + '%';
+            if (pEl) pEl.textContent = Math.round(v) + '%';
+            if (tEl) tEl.textContent = text;
+        }
+
         function showToast(message, type = 'info') {
-            const container = document.getElementById('toastContainer');
-            const toast = document.createElement('div');
-            toast.className = `toast ${type}`;
-
+            const c = document.getElementById('toastContainer');
+            const t = document.createElement('div');
+            t.className = `toast ${type}`;
             const icons = { success: 'fa-circle-check', error: 'fa-circle-xmark', info: 'fa-circle-info' };
-            toast.innerHTML = `<i class="fas ${icons[type] || icons.info}"></i><span>${message}</span>`;
-
-            container.appendChild(toast);
-
-            setTimeout(() => {
-                toast.classList.add('leaving');
-                toast.addEventListener('animationend', () => toast.remove());
-            }, 4000);
+            t.innerHTML = `<i class="fas ${icons[type] || icons.info}" style="margin-top:2px;flex-shrink:0;"></i><span>${message}</span>`;
+            c.appendChild(t);
+            setTimeout(() => { t.classList.add('leaving'); t.addEventListener('animationend', () => t.remove()); }, 4500);
         }
 
-        // ============================================================
+        function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+        // ================================================================
         // INICIAR
-        // ============================================================
+        // ================================================================
         init();
     </script>
 </body>
